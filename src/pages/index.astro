@@ -1,0 +1,73 @@
+---
+import Mainlayout from "../layouts/Mainlayout.astro";
+import Landing from "../components/Landing.astro";
+import Privattilbud from "../components/Privattilbud.astro";
+import Erhvervtilbud from "../components/Erhvervtilbud.astro";
+---
+
+<Mainlayout title="Forside - JT Anlæg">
+	<Landing />
+	<p>
+Hos JT Anlæg udfører vi alle former for udendørs anlægsgartneropgaver, og vi sætter altid en stor ære i at udføre vores arbejde til perfektion.<br><br>
+Leder du efter en professionel anlægsgartner til privat eller erhverv, er vi den rette samarbejdspartner for dig.
+Vi arbejder nemlig både for private, kommuner, offentlige institutioner samt erhvervsvirksomheder – ingen opgaver er for små eller store for os.
+	</p>
+	<span></span>
+	<h1>Vi tilbyder</h1>
+	<div>
+		<Erhvervtilbud />
+		<Privattilbud />
+	</div>
+</Mainlayout>
+
+<style>
+	div {
+		width: 100%;
+	}
+
+	p {
+		max-width: 65ch;
+		padding-inline: 2rem;
+		align-self: center;
+		padding-bottom: 2rem;
+	}
+
+	h1 {
+		margin-inline: auto;
+		margin-block: 0.5rem;
+	}
+
+	span {
+		border: 1px solid black;
+		width: 90%;
+		margin-inline: auto;
+	}
+
+	img {
+		margin-inline: 0.5rem;
+		width: 95%;
+		max-width: 500px;
+		object-fit: cover;
+	}
+
+	a	{
+		background-color: rgb(101, 128, 70);
+    border-radius: 5px;
+    display: grid;
+    place-items: center;
+    padding: 1rem 2rem;
+		text-decoration: none;  
+    color: #fff;
+		text-transform: uppercase;
+		font-weight: 600;
+		margin-block-end: 2rem;
+	}
+
+	@media (min-width: 720px){
+		div {
+			display: flex;
+			justify-content: center;								
+			margin-block-end: 2rem;
+		}
+	}
+</style>

@@ -1,0 +1,29 @@
+---
+import { getImage } from "astro:assets";
+import LandingImage from "../assets/IMG_0586-unsmushed.jpg"
+const landingbgImage = await getImage({ src: LandingImage });
+---
+<div style={`background-image: url('${landingbgImage.src}')`}>
+  <h1>Erhverv</h1>
+</div>
+
+<style>
+	div {
+		width: 100%;
+    background-color: rgb(101, 128, 70);
+		background-size: cover;
+		background-position: center;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		color: #fff;
+    background-blend-mode: multiply;
+	}
+
+  h1 {
+    margin-block: 8rem;
+    font-size: 3rem;
+  }
+
+</style>

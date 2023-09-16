@@ -1,0 +1,66 @@
+---
+import Referencelanding from "../components/Referencelanding.astro";
+import Mainlayout from "../layouts/Mainlayout.astro";
+import { Image } from "astro:assets";
+
+import ebilledeEt from "../assets/262-unsmushed.jpg"
+---
+<Mainlayout title="Referencer - JT Anlæg">
+  <Referencelanding />
+  <p>Her på siden kan du se billeder af nogle af de privat- og erhvervsopgaver, vi har udført for vores tilfredse kunder. Opgaverne spænder bredt, og de er udført med fokus på den enkelte kundes behov.<br><br>
+    Skal du være den næste tilfredse kunde i vores portefølje?
+  </p>
+  <h2>Erhverv</h2>
+  <ul>
+    <li><Image src={ebilledeEt} alt="" width="500" height="500" /></li>
+    <li><Image src={ebilledeEt} alt="" width="500" height="500" /></li>
+    <li><Image src={ebilledeEt} alt="" width="500" height="500" /></li>
+    <li><Image src={ebilledeEt} alt="" width="500" height="500" /></li>
+    <li><Image src={ebilledeEt} alt="" width="500" height="500" /></li>
+    <li><Image src={ebilledeEt} alt="" width="500" height="500" /></li>
+    <li><Image src={ebilledeEt} alt="" width="500" height="500" /></li>
+    <li><Image src={ebilledeEt} alt="" width="500" height="500" /></li>
+  </ul>
+  <h2>Privat</h2>
+  <ul>
+    <li><Image src={ebilledeEt} alt="" width="500" height="500" /></li>
+    <li><Image src={ebilledeEt} alt="" width="500" height="500" /></li>
+    <li><Image src={ebilledeEt} alt="" width="500" height="500" /></li>
+    <li><Image src={ebilledeEt} alt="" width="500" height="500" /></li>
+    <li><Image src={ebilledeEt} alt="" width="500" height="500" /></li>
+    <li><Image src={ebilledeEt} alt="" width="500" height="500" /></li>
+    <li><Image src={ebilledeEt} alt="" width="500" height="500" /></li>
+    <li><Image src={ebilledeEt} alt="" width="500" height="500" /></li>
+  </ul>
+</Mainlayout>
+
+<style>
+  p {
+		max-width: 65ch;
+		padding-inline: 2rem;
+		align-self: center;
+		padding-bottom: 2rem;
+	}
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-inline: 2rem;
+    padding: 0;
+    list-style-type: none;  
+  }
+
+  li {
+    flex-basis: 400px;
+  }
+
+  img {
+    object-fit: cover;
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    border-radius: 5px;
+  }
+</style>

@@ -1,0 +1,48 @@
+---
+import Footercardjohn from "./Footercardjohn.astro";
+import Footercardkrestina from "./Footercardkrestina.astro";
+import dka from "../assets/Aktiv-12221.svg"
+---
+
+<footer>
+  <a href=https://www.dnb.com/da-dk/produkter-og-tjenester/live-rating-logo/ target="_blank"><img src=https://ratinglogo.bisnode.com/275439-1747770421283350731.svg height="250"/></a>
+  <div>
+    <Footercardjohn />
+    <Footercardkrestina />
+  </div>
+  <h3>Vi er medlem af</h3>
+  <img src={dka.src} alt="" srcset="">
+  <span>© JT Anlæg – 2023</span>
+</footer>
+
+<style>
+  footer {
+    background-color: #fff;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    width: 100%;
+    background-color: rgb(101, 128, 70);
+  }
+
+  span {
+    background-color: rgb(101, 128, 70);
+    width: 100%;
+    text-align: center;
+    padding-block: 1rem 0.5rem;
+  }
+
+  img {
+    width: 200px;
+  }
+
+  @media (min-width: 720px) {
+    div {
+      display: flex;
+      justify-content: space-around;
+      gap: 5rem;
+    }
+  }
+</style>

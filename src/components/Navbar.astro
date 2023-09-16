@@ -1,0 +1,134 @@
+---
+import Hamburger from "./Hamburger.astro";
+import Kontaktbtn from "./Kontaktbtn.astro";
+import NavcloseIcon from "./NavcloseIcon.astro";
+import Logo from "../assets/Jt-_Anlaeg-_jtanlaeglogo.jpg";
+
+
+---
+<div>
+  <span>
+    <Kontaktbtn />
+    <Hamburger />
+    <NavcloseIcon />
+  </span>
+  <ul id="menulist" class="nodisplay">
+    <li><a href="/erhverv/">Erhverv</a></li>
+    <li><a href="/privat/">Privat</a></li>
+    <li><a href="/referencer/">Referencer</a></li>
+    <li><a href="/om-os/">Om os</a></li>
+  </ul>
+  <h3><a href="/"><img src={Logo.src} alt="logo"></a></h3>
+</div>
+
+<style>
+  div {
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-inline: 2rem;
+    padding-block: 0.75rem;
+    margin: 0;
+    min-height: 64px;
+    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.25);
+  }
+
+  span {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    gap: 1rem;
+    padding: 0;
+    margin: 0;
+  }
+  
+  a {
+    box-shadow: 0px 0px 0px 0px #000;
+    transition: box-shadow 100ms ease-in;
+  }
+  
+  a:hover {
+    box-shadow: 0px 2px 0px 0px #000;
+  }
+  
+  a, a:visited {
+    text-decoration: none;
+    color: black;
+  }
+  
+  h3 > a {
+    box-shadow: none;
+  }
+
+  h3 {
+    display: none;
+    font-size: 1.25rem;
+  }
+  
+  a, h3, span {
+    white-space: nowrap;
+  }
+
+  .nodisplay {
+    display: none;
+  }
+
+  img {
+    width: 100%;
+    max-height: 64px;
+    object-fit: cover;
+  }
+
+  @media (min-width: 720px) {
+    div {
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      align-items: center;
+      padding-inline: 2rem;
+    }
+
+    ul {
+      flex-direction: row;
+    }
+
+    h3 {
+      display: block;
+      margin-block: 0;
+    }
+
+    .nodisplay {
+      display: flex;
+    }
+  }
+
+</style>
+
+<script>
+  const hamburger = document.querySelector('svg.open');
+  const hambclose = document.querySelector('svg.close');
+  const menuItems = document.getElementById('menulist');
+
+  hamburger.addEventListener('click', () => {
+    hambclose.classList.toggle('nodisplay');
+    hamburger.classList.toggle('nodisplay');
+    menuItems.classList.toggle('nodisplay');
+  });
+
+  hambclose.addEventListener('click', () => {
+    hamburger.classList.toggle('nodisplay');
+    hambclose.classList.toggle('nodisplay');
+    menuItems.classList.toggle('nodisplay');
+  });
+</script>
