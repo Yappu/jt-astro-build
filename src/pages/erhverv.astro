@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+import Billede from "../assets/262-unsmushed.jpg"
 import Erhvervlanding from "../components/Erhvervlanding.astro";
 import Mainlayout from "../layouts/Mainlayout.astro";
 ---
@@ -17,23 +19,33 @@ med et skarpt blik for detaljen.<br><br>
 Din tilfredshed som kunde er vigtigt for os. 
 Med mere end 20 års erfaring i anlægsbranchen sikrer vi at vi aldrig går på kompromis med dit projekt uanset om der er tale om en lille eller stor anlægsopgaver.
 </p>
-<h2>Vi udfører bl.a.:</h2>
-<ul>
-  <li>Sætning af kantsten</li>
-  <li>Lægning af fortov</li>
-  <li>Belægning</li>
-  <li>Brolægning med Chaussesten og brosten</li>
-  <li>Nyanlæg</li>
-  <li>Renovering af eksisterende anlæg</li>
-</ul>
-<p>
-  Skal du have lavet en anlægsopgave, der ikke er nævnt her? Så kontakt os og vi skræddersyer et tilbud, som passer netop til jeres anlægsprojekt.
-</p>
+<section>
+  <div>
+    <h2>Vi udfører bl.a.:</h2>
+    <ul>
+      <li>Sætning af kantsten</li>
+      <li>Lægning af fortov</li>
+      <li>Belægning</li>
+      <li>Brolægning med Chaussesten og brosten</li>
+      <li>Nyanlæg</li>
+      <li>Renovering af eksisterende anlæg</li>
+    </ul>
+    <p>
+      Skal du have lavet en anlægsopgave, der ikke er nævnt her? Så kontakt os og vi skræddersyer et tilbud, som passer netop til jeres anlægsprojekt.
+    </p>
+    <a href="/jt-astro-build/referencer/">Se hvad vi har lavet</a>
+  </div>
+  <div>
+    <Image src={Billede} alt="" width="400" height="400" />
+    <Image src={Billede} alt="" width="400" height="400" />
+  </div>
+</section>
 </Mainlayout>
 
 <style>
   h3 {
     font-weight: 300;
+    text-align: center;
   }
 
   p {
@@ -46,5 +58,72 @@ Med mere end 20 års erfaring i anlægsbranchen sikrer vi at vi aldrig går på 
   ul {
     padding: 0;
     margin: 0;
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-block-end: 2rem;
+    padding-inline: 2rem;
+    align-items: center;
+  }
+
+  section:nth-child(4) > div:nth-child(1) {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  img {
+    object-fit: cover;
+    border-radius: 15px;
+  }
+  
+  a	{
+		background-color: rgb(101, 128, 70);
+    border-radius: 5px;
+    display: grid;
+    place-items: center;
+    padding: 1rem 2rem;
+		text-decoration: none;  
+    color: #fff;
+		text-transform: uppercase;
+		font-weight: 600;
+    align-self: center;
+    box-shadow: 0px 10px 10px -10px #fff;
+    transition: box-shadow 100ms ease-in;    
+	}
+
+  a:hover {
+    box-shadow: 0px 10px 10px -10px #333;
+  }
+
+  @media (min-width: 720px) {
+
+    section {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+    
+    section:nth-child(4) > div:nth-child(1) {
+    display: flex;
+    flex-direction: column;
+    max-width: 50%;
+    gap: 0.5rem;
+  }
+
+  section:nth-child(4) > div:nth-child(1) > p:nth-child(3) {
+    padding-inline: 0;
+  }
+
+  
+  section:nth-child(4) > div:nth-child(2) > img:nth-child(1) {
+    z-index: 2;
+  }
+  
+  section:nth-child(4) > div:nth-child(2) > img:nth-child(2) {
+    transform: translate(10rem, -5rem);
+  }
   }
 </style>
