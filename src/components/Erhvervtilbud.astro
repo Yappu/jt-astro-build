@@ -17,12 +17,12 @@ import erhvervbillede from "../assets/IMG_0586-unsmushed.jpg"
   div {
     display: grid;
     justify-items: center;
+    row-gap: 2rem;
   }
 
   img {
-		margin-inline: 0.5rem;
-		width: 95%;
-		max-width: 500px;
+		width: 100%;
+    max-width: 600px;
 		object-fit: cover;
     border-radius: 15px;
 	}
@@ -51,13 +51,12 @@ import erhvervbillede from "../assets/IMG_0586-unsmushed.jpg"
   }
 
   p {
-		max-width: 65ch;
+		max-width: 50ch;
 		padding-inline: 2rem;
 		align-self: center;
-		padding-bottom: 2rem;
 	}
 
-  @media (max-width: 719px) {
+  @media (max-width: 900px) {
     div {      					
 			margin-block-end: 2rem;
     }
