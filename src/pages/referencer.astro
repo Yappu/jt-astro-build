@@ -18,8 +18,6 @@ import ebilledeEt from "../assets/262-unsmushed.jpg"
     <Image src={ebilledeEt} alt="" width="1000" height="1000" />
     <Image src={ebilledeEt} alt="" width="1000" height="1000" />
     <Image src={ebilledeEt} alt="" width="1000" height="1000" />
-    <Image src={ebilledeEt} alt="" width="1000" height="1000" />
-
   </div>
   <ul>
     
@@ -32,8 +30,6 @@ import ebilledeEt from "../assets/262-unsmushed.jpg"
     <Image src={ebilledeEt} alt="" width="1000" height="1000" />
     <Image src={ebilledeEt} alt="" width="1000" height="1000" />
     <Image src={ebilledeEt} alt="" width="1000" height="1000" />
-    <Image src={ebilledeEt} alt="" width="1000" height="1000" />
-
   </div>
   <link
   rel="stylesheet"
@@ -47,7 +43,7 @@ import ebilledeEt from "../assets/262-unsmushed.jpg"
 <style>
   .grid {
     display: grid;
-    grid-template-columns: minmax(1fr, 1000px);
+    grid-template-columns: repeat(2, minmax(auto, 200px));
     gap: 1rem;
     padding-inline: 2rem;
     place-content: center;
@@ -56,7 +52,7 @@ import ebilledeEt from "../assets/262-unsmushed.jpg"
   
   @media (min-width: 900px){
     .grid {
-      grid-template-columns: repeat(3, minmax(auto, 1000px));
+      grid-template-columns: repeat(3, minmax(auto, 350px));
     }
   }
 
