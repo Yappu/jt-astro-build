@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 import Billede from "../assets/262-unsmushed.jpg"
 import Privatlanding from "../components/Privatlanding.astro";
 import Mainlayout from "../layouts/Mainlayout.astro";
+import Checkmark from "../components/Checkmark.astro";
 ---
 <Mainlayout title="Privat - JT Anlæg">
  <Privatlanding />
@@ -36,6 +37,11 @@ import Mainlayout from "../layouts/Mainlayout.astro";
     <Image src={Billede} alt="" width="400" height="400" />
   </div>
 </section>
+<div>
+  <Checkmark indhold="Kvalitetsarbejde"/>
+  <Checkmark indhold="Medlem af Danske Anlægsgartnere"/>
+  <Checkmark indhold="Over 20 års erfaring i branchen"/>
+</div>
 </Mainlayout>
 
 <style>
@@ -60,7 +66,6 @@ import Mainlayout from "../layouts/Mainlayout.astro";
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    margin-block-end: 2rem;
     padding-inline: 2rem;
     align-items: center;
   }
@@ -69,6 +74,13 @@ import Mainlayout from "../layouts/Mainlayout.astro";
     display: flex;
     flex-direction: column;
     gap: 2rem;
+  }
+
+  div:nth-child(5) {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-block-end: 2rem;
   }
   
   img {
@@ -109,17 +121,22 @@ import Mainlayout from "../layouts/Mainlayout.astro";
     gap: 0.5rem;
   }
 
-  section:nth-child(4) > div:nth-child(1) > p:nth-child(3) {
-    padding-inline: 0;
-  }
+    section:nth-child(4) > div:nth-child(1) > p:nth-child(3) {
+      padding-inline: 0;
+    }
 
-  
-  section:nth-child(4) > div:nth-child(2) > img:nth-child(1) {
-    z-index: 2;
-  }
-  
-  section:nth-child(4) > div:nth-child(2) > img:nth-child(2) {
-    transform: translate(10rem, -5rem);
-  }
+    
+    section:nth-child(4) > div:nth-child(2) > img:nth-child(1) {
+      z-index: 2;
+    }
+    
+    section:nth-child(4) > div:nth-child(2) > img:nth-child(2) {
+      transform: translate(10rem, -5rem);
+    }
+
+    div:nth-child(5) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 </style>

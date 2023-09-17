@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 import Billede from "../assets/262-unsmushed.jpg"
 import Erhvervlanding from "../components/Erhvervlanding.astro";
 import Mainlayout from "../layouts/Mainlayout.astro";
+import Checkmark from "../components/Checkmark.astro";
 ---
 <Mainlayout title="Erhverv - JT Anlæg">
  <Erhvervlanding />
@@ -40,6 +41,11 @@ Med mere end 20 års erfaring i anlægsbranchen sikrer vi at vi aldrig går på 
     <Image src={Billede} alt="" width="400" height="400" />
   </div>
 </section>
+<div>
+  <Checkmark indhold="Kvalitetsarbejde"/>
+  <Checkmark indhold="Medlem af Danske Anlægsgartnere"/>
+  <Checkmark indhold="Over 20 års erfaring i branchen"/>
+</div>
 </Mainlayout>
 
 <style>
@@ -64,7 +70,6 @@ Med mere end 20 års erfaring i anlægsbranchen sikrer vi at vi aldrig går på 
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    margin-block-end: 2rem;
     padding-inline: 2rem;
     align-items: center;
   }
@@ -73,6 +78,19 @@ Med mere end 20 års erfaring i anlægsbranchen sikrer vi at vi aldrig går på 
     display: flex;
     flex-direction: column;
     gap: 2rem;
+  }
+
+  section:nth-child(4) > div:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  div:nth-child(5) {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-block-end: 2rem;
   }
   
   img {
@@ -113,17 +131,22 @@ Med mere end 20 års erfaring i anlægsbranchen sikrer vi at vi aldrig går på 
     gap: 0.5rem;
   }
 
-  section:nth-child(4) > div:nth-child(1) > p:nth-child(3) {
-    padding-inline: 0;
-  }
+    section:nth-child(4) > div:nth-child(1) > p:nth-child(3) {
+      padding-inline: 0;
+    }
 
-  
-  section:nth-child(4) > div:nth-child(2) > img:nth-child(1) {
-    z-index: 2;
-  }
-  
-  section:nth-child(4) > div:nth-child(2) > img:nth-child(2) {
-    transform: translate(10rem, -5rem);
-  }
+    
+    section:nth-child(4) > div:nth-child(2) > img:nth-child(1) {
+      z-index: 2;
+    }
+    
+    section:nth-child(4) > div:nth-child(2) > img:nth-child(2) {
+      transform: translate(10rem, -5rem);
+    }
+
+    div:nth-child(5) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 </style>
