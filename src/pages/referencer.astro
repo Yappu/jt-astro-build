@@ -11,27 +11,30 @@ import ebilledeEt from "../assets/262-unsmushed.jpg"
     Skal du være den næste tilfredse kunde i vores portefølje?
   </p>
   <h2>Erhverv</h2>
+  <div class="grid">
+    <Image src={ebilledeEt} alt="" width="1000" height="1000" />
+    <Image src={ebilledeEt} alt="" width="1000" height="1000" />
+    <Image src={ebilledeEt} alt="" width="1000" height="1000" />
+    <Image src={ebilledeEt} alt="" width="1000" height="1000" />
+    <Image src={ebilledeEt} alt="" width="1000" height="1000" />
+    <Image src={ebilledeEt} alt="" width="1000" height="1000" />
+    <Image src={ebilledeEt} alt="" width="1000" height="1000" />
+
+  </div>
   <ul>
-    <li><Image src={ebilledeEt} alt="" width="500" height="500" /></li>
-    <li><Image src={ebilledeEt} alt="" width="500" height="500" /></li>
-    <li><Image src={ebilledeEt} alt="" width="500" height="500" /></li>
-    <li><Image src={ebilledeEt} alt="" width="500" height="500" /></li>
-    <li><Image src={ebilledeEt} alt="" width="500" height="500" /></li>
-    <li><Image src={ebilledeEt} alt="" width="500" height="500" /></li>
-    <li><Image src={ebilledeEt} alt="" width="500" height="500" /></li>
-    <li><Image src={ebilledeEt} alt="" width="500" height="500" /></li>
+    
   </ul>
   <h2>Privat</h2>
-  <ul>
-    <li><Image src={ebilledeEt} alt="" width="500" height="500" /></li>
-    <li><Image src={ebilledeEt} alt="" width="500" height="500" /></li>
-    <li><Image src={ebilledeEt} alt="" width="500" height="500" /></li>
-    <li><Image src={ebilledeEt} alt="" width="500" height="500" /></li>
-    <li><Image src={ebilledeEt} alt="" width="500" height="500" /></li>
-    <li><Image src={ebilledeEt} alt="" width="500" height="500" /></li>
-    <li><Image src={ebilledeEt} alt="" width="500" height="500" /></li>
-    <li><Image src={ebilledeEt} alt="" width="500" height="500" /></li>
-  </ul>
+  <div class="grid">
+    <Image src={ebilledeEt} alt="" width="1000" height="1000" />
+    <Image src={ebilledeEt} alt="" width="1000" height="1000" />
+    <Image src={ebilledeEt} alt="" width="1000" height="1000" />
+    <Image src={ebilledeEt} alt="" width="1000" height="1000" />
+    <Image src={ebilledeEt} alt="" width="1000" height="1000" />
+    <Image src={ebilledeEt} alt="" width="1000" height="1000" />
+    <Image src={ebilledeEt} alt="" width="1000" height="1000" />
+
+  </div>
   <link
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
@@ -42,6 +45,21 @@ import ebilledeEt from "../assets/262-unsmushed.jpg"
 </Mainlayout>
 
 <style>
+  .grid {
+    display: grid;
+    grid-template-columns: minmax(1fr, 1000px);
+    gap: 1rem;
+    padding-inline: 2rem;
+    place-content: center;
+  }
+
+  
+  @media (min-width: 720px){
+    .grid {
+      grid-template-columns: repeat(3, minmax(auto, 1000px));
+    }
+  }
+
   p {
 		max-width: 65ch;
 		padding-inline: 2rem;
@@ -49,26 +67,44 @@ import ebilledeEt from "../assets/262-unsmushed.jpg"
 		padding-bottom: 2rem;
 	}
 
-  ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
-    margin-inline: 2rem;
-    padding: 0;
-    list-style-type: none;
-    margin-block-end: 2rem;
-  }
-
-  li {
-    flex-basis: 400px;
-  }
-
   img {
     object-fit: cover;
     max-width: 100%;
     height: auto;
     vertical-align: middle;
     border-radius: 5px;
+    cursor: pointer;
+  }
+
+  div.grid:nth-child(7) {
+    margin-block-end: 2rem;
   }
 </style>
+
+<script>
+  const lightbox = document.createElement('div');
+  lightbox.id = 'lightbox';
+  document.body.appendChild(lightbox);
+
+  const container = document.querySelector('main');
+  console.log(container);
+  const images = container.querySelectorAll('img');
+  console.log(images);
+
+  images.forEach(image => {
+    image.addEventListener('click', e => {
+      lightbox.classList.add('active');
+      const img = document.createElement('img');
+      img.src = image.src;
+      while (lightbox.firstChild) {
+        lightbox.removeChild(lightbox.firstChild)
+      };
+      lightbox.appendChild(img);
+    });
+  });
+
+  lightbox.addEventListener('click', e => {
+    if (e.target !== e.currentTarget) return
+    lightbox.classList.remove('active');
+  });
+</script>
